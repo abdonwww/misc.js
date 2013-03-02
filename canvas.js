@@ -1,17 +1,9 @@
 /*****************************************
  *
  *  Cross browser requestAnimationFrame
- *  To know more detail, go to the following link
- *  http://paulirish.com/2011/requestanimationframe-for-smart-animating/
  *
 *****************************************/
 window.requestAnimFrame = (function(callback) {
-	var agent = navigator.userAgent
-	if(agent.search(/iPhone/) != -1 || agent.search(/iPod/) != -1 || agent.search(/iPad/) != -1){
-		return function(callback) {
-			window.setTimeout(callback, 1000 / 60);
-		};
-	}
 	return window.requestAnimationFrame ||
 		window.webkitRequestAnimationFrame ||
 		window.mozRequestAnimationFrame ||
